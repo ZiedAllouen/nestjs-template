@@ -1,14 +1,7 @@
-/* ************************************************************************** */
-/*                                Dependencies                                */
-/* ************************************************************************** */
 
-// Lib dependencies
 import { registerAs } from '@nestjs/config';
 import { z } from 'zod';
 
-/* ************************************************************************** */
-/*                                Configuration                               */
-/* ************************************************************************** */
 
 const jwtConfiguration = registerAs('jwt', () => ({
   secret: process.env.JWT_SECRET,
@@ -29,13 +22,3 @@ const jwtConfigurationSchema = z.object({
 
 export { jwtConfiguration, jwtConfigurationSchema };
 
-/* ************************************************************************** */
-/*                                Documentation                               */
-/* ************************************************************************** */
-
-/**
- * JWT Configuration Documentation:
- *
- * @property {string} JWT_SECRET - Secret key for signing JWT tokens (min 32 chars)
- * @property {string} JWT_EXPIRES_IN - Access token expiration time in seconds
- */
